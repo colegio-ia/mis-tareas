@@ -6,7 +6,7 @@ from datetime import datetime
 st.set_page_config(page_title="Asistente de Tareas Equipo", layout="centered")
 
 st.title("📝 Registro de Tareas Diarias")
-st.write("Registra tus avances aquí para que el equipo esté al tanto.")
+st.write("Registrá lo que hiciste hoy para que el equipo esté al tanto.")
 
 # Base de datos simulada (En una app real usaríamos una base de datos externa, 
 # pero para empezar, Streamlit mantiene los datos en la sesión)
@@ -15,9 +15,9 @@ if 'tareas' not in st.session_state:
 
 # Formulario de entrada
 with st.form("form_tareas", clear_on_submit=True):
-    usuario = st.selectbox("¿Quién eres?", ["Persona 1", "Persona 2", "Persona 3"])
+    usuario = st.selectbox("¿Quién eres?", ["Lorena", "Carlos", "Otro"])
     descripcion = st.text_area("¿Qué hiciste hoy?")
-    destino = st.selectbox("¿A qué equipo hay que pasarle esto?", ["Marketing", "Sistemas", "Ventas", "Administración", "Solo registro"])
+    destino = st.selectbox("¿A qué equipo hay que pasarle esto?", ["Comunicación", "Sistemas", "Administración"])
     
     submit = st.form_submit_button("Guardar Tarea")
 
@@ -44,3 +44,4 @@ else:
 if st.session_state.tareas:
     texto_resumen = str(st.session_state.tareas)
     st.download_button("Descargar resumen para la IA", texto_resumen, file_name="tareas_hoy.txt")
+
