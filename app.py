@@ -38,7 +38,7 @@ def guardar_en_github(nueva_tarea):
 
 # 3. FORMULARIO DE ENTRADA
 with st.form("form_tareas", clear_on_submit=True):
-    usuario = st.selectbox("¿Quién eres?", ["Lorena", "Carlos", "Otro"])
+    usuario = st.selectbox("¿Quién eres?", ["CDP", "Equipo", "Otro"])
     descripcion = st.text_area("¿Qué hiciste hoy?")
     destino = st.selectbox("¿A qué equipo hay que pasarle esto?", ["Comunicación", "Administración"])
     
@@ -77,3 +77,4 @@ if tareas_totales:
     st.download_button("Descargar resumen", texto_resumen, file_name="tareas_hoy.txt")
 else:
     st.info("Aún no hay tareas registradas en el servidor.")
+
