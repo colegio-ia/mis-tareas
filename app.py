@@ -5,8 +5,8 @@ from datetime import datetime
 # Configuración de la página
 st.set_page_config(page_title="Asistente de Tareas Equipo", layout="centered")
 
-st.title("📝 Registro de Tareas Diarias")
-st.write("Registrá lo que hiciste hoy para que el equipo esté al tanto.")
+st.title("📝 Registro de tareas diarias")
+st.write("Anotá lo que hiciste hoy para que el equipo esté al tanto.")
 
 # Base de datos simulada (En una app real usaríamos una base de datos externa, 
 # pero para empezar, Streamlit mantiene los datos en la sesión)
@@ -44,5 +44,6 @@ else:
 if st.session_state.tareas:
     texto_resumen = str(st.session_state.tareas)
     st.download_button("Descargar resumen para la IA", texto_resumen, file_name="tareas_hoy.txt")
+
 
 
