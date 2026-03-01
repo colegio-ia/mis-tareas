@@ -36,7 +36,7 @@ st.divider()
 st.subheader("📋 Tareas del Día")
 if st.session_state.tareas:
     df = pd.DataFrame(st.session_state.tareas)
-    st.table(df)
+    st.dataframe(df, use_container_width=True, hide_index=True)
 else:
     st.info("Aún no hay tareas registradas hoy.")
 
@@ -44,6 +44,3 @@ else:
 if st.session_state.tareas:
     texto_resumen = str(st.session_state.tareas)
     st.download_button("Descargar resumen para la IA", texto_resumen, file_name="tareas_hoy.txt")
-
-
-
