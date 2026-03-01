@@ -17,7 +17,7 @@ if 'tareas' not in st.session_state:
 with st.form("form_tareas", clear_on_submit=True):
     usuario = st.selectbox("¿Quién eres?", ["Lorena", "Carlos", "Otro"])
     descripcion = st.text_area("¿Qué hiciste hoy?")
-    destino = st.selectbox("¿A qué equipo hay que pasarle esto?", ["Comunicación", "Sistemas", "Administración"])
+    destino = st.selectbox("¿A qué equipo hay que pasarle esto?", ["Comunicación", "Administración"])
     
     submit = st.form_submit_button("Guardar Tarea")
 
@@ -44,4 +44,5 @@ else:
 if st.session_state.tareas:
     texto_resumen = str(st.session_state.tareas)
     st.download_button("Descargar resumen para la IA", texto_resumen, file_name="tareas_hoy.txt")
+
 
