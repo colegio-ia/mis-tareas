@@ -20,7 +20,7 @@ st.title("📝 Registro de tareas diarias")
 # Mensaje dinámico según la hora
 hora_actual = datetime.now().hour
 if hora_actual >= 16: # A partir de las 4 PM
-    st.warning("⚠️ ¡No olvides registrar tus tareas antes de terminar el día!")
+    st.warning("⚠️¡Recordá anotar tus tareas antes de terminar el día!")
 st.write("Anotá lo que hiciste hoy para que el equipo esté al tanto.")
 
 # 2. FUNCIONES PARA MANEJAR DATOS EN LA NUBE
@@ -81,6 +81,7 @@ if tareas_totales:
     st.download_button("Descargar resumen", texto_resumen, file_name="tareas_hoy.txt")
 else:
     st.info("Aún no hay tareas registradas en el servidor.")
+
 
 
 
